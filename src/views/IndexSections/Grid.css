@@ -1,0 +1,15 @@
+.gridCard {
+    /* background-color : #EDEDF0; */
+    height : 100px;
+    margin-top : 5px;
+}
+.gridCardHover {
+    /* background-color : #EDEDF0; */
+    height : 100px;
+    margin-top : 5px;
+    /* margin-left : 5px; */
+    display: flex;
+}
+.gridCardHover:hover {
+    box-shadow: 0px 3px 11px 0px #5e72e4;
+}

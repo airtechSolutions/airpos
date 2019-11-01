@@ -1,0 +1,9 @@
+.liststyle {
+    list-style: none;
+}
+.liststyle li::before {
+    content: '✓';
+    color: red;
+    font-size: 20px;
+    font-weight: 200;
+}
