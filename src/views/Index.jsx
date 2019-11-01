@@ -88,7 +88,7 @@ class Index extends React.Component {
               <Menus />
           </section> */}
           {/* <Navbars /> */}
-          <section className="section section-components" style={{backgroundColor : '#EDEDF0', marginTop : '-230px'}}>
+          <section className="section section-components" style={{backgroundColor : '#EDEDF0', marginTop : '-80px'}}>
             <Container>
               {/* <Table empdata={this.state.id} /> */}
               <Tabs />

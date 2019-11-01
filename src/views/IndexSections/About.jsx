@@ -25,7 +25,7 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <section className="section section-lg section-nucleo-icons pb-250">
+        <section style={{padding: 0}} className="section section-lg section-nucleo-icons pb-250">
           <Container>
             <Row className="justify-content-center">
               <Col className="text-center" lg="8">
