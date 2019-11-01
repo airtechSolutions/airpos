@@ -62,7 +62,7 @@ const Packages = (props) => {
                             <Button
                                 className="mt-4"
                                 color="success"
-                                href="#pablo"
+                                // href="#pablo"
                                 onClick={e => e.preventDefault()}
                             >
                                 Subscribe
@@ -101,7 +101,7 @@ const Packages = (props) => {
                             <Button
                                 className="mt-4"
                                 color="primary"
-                                href="#pablo"
+                                // href="#pablo"
                                 onClick={e => e.preventDefault()}
                             >
                                 Subscribe
@@ -140,7 +140,7 @@ const Packages = (props) => {
                             <Button
                                 className="mt-4"
                                 color="default"
-                                href="#pablo"
+                                // href="#pablo"
                                 onClick={e => e.preventDefault()}
                             >
                                 Subscribe

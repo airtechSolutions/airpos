@@ -37,21 +37,21 @@ class About extends React.Component {
                 </p>
                 <div className="btn-wrapper">
                 <Link to='/login-page'>
-                <Button
-                    className="btn-neutral btn-icon"
-                    // color="black"
-                    target="_blank"
-                    style={{backgroundColor : '#7187f1'}}
-                >
+                    <Button
+                        className="btn-neutral btn-icon"
+                        // color="black"
+                        target="_blank"
+                        style={{backgroundColor : '#7187f1'}}
+                    >
 
-                    <span className="btn-inner--icon">
-                    <i style={{color : 'white'}} className="fa fa-sign-in" aria-hidden="true"></i>
-                    </span>
-                    <span style={{color : 'white'}} className="nav-link-inner--text ml-1">
-                    Subscribe
-                    </span>
-                </Button>
-            </Link>
+                        <span className="btn-inner--icon">
+                        <i style={{color : 'white'}} className="fa fa-sign-in" aria-hidden="true"></i>
+                        </span>
+                        <span style={{color : 'white'}} className="nav-link-inner--text ml-1">
+                        Subscribe
+                        </span>
+                    </Button>
+                </Link>
                 </div>
               </Col>
             </Row>
