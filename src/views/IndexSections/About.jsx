@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 
-class Icons extends React.Component {
+class About extends React.Component {
   render() {
     return (
       <>
@@ -29,12 +29,11 @@ class Icons extends React.Component {
           <Container>
             <Row className="justify-content-center">
               <Col className="text-center" lg="8">
-                <h2 className="display-3">Nucleo Icons</h2>
+                <h2 className="display-3">About AIRPOS</h2>
                 <p className="lead">
-                  The official package contains over 21.000 icons which are
-                  looking great in combination with Argon Design System. Make
-                  sure you check all of them and use those that you like the
-                  most.
+                  AIRPOS Is Complete Point Of Sale Web Based Application. Designed
+                  For Resturant Owners To Completely MAnage The Resturant. Inventory
+                  Staff, Sale/Purchase Reports. Makes Management Easier Like Piece Of Cake.
                 </p>
                 <div className="btn-wrapper">
                 <Link to='/login-page'>
@@ -85,4 +84,4 @@ class Icons extends React.Component {
   }
 }
 
-export default Icons;
+export default About;

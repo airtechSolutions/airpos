@@ -45,7 +45,10 @@ import Carousel from "./IndexSections/Carousel.jsx";
 // import Table from "./IndexSections/Table.jsx";
 import Grid from './IndexSections/Grid';
 import POSDevice from "./IndexSections/POSDevice.jsx";
+import Packages from "./IndexSections/Packages.jsx";
+// import Landing from "./examples/Landing.jsx";
 // import Icons from "./IndexSections/Icons.jsx";
+import About from "./IndexSections/About.jsx";
 // import Login from "./IndexSections/Login.jsx";
 // import Download from "./IndexSections/Download.jsx";
 
@@ -72,17 +75,18 @@ class Index extends React.Component {
         <DemoNavbar />
         <main ref="main">
           <Hero />
-          <div className="container">
-            {/* <div style={{marginTop : "30px"}} className="jumbotron"> */}
-              {/* <Typography /> */}
-            {/* </div> */}
-          </div>
+          <About />
+          {/* <div className="container">
+            <div style={{marginTop : "30px"}} className="jumbotron">
+              <Typography />
+            </div>
+          </div> */}
           {/* <Buttons /> */}
           {/* <Inputs /> */}
-          <section className="section">
-              {/* <CustomControls />
-              <Menus /> */}
-          </section>
+          {/* <section className="section">
+              <CustomControls />
+              <Menus />
+          </section> */}
           {/* <Navbars /> */}
           <section className="section section-components" style={{backgroundColor : '#EDEDF0'}}>
             <Container>
@@ -115,8 +119,14 @@ class Index extends React.Component {
               </Container>
             </div>
           </section>
+          <section className="section section-components">
+            <div>
+              <Container>
+                <Packages />
+              </Container>
+            </div>
+          </section>
           <Carousel />
-          {/* <Icons /> */}
           {/* <Login /> */}
           {/* <Download /> */}
         </main>

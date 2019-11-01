@@ -47,7 +47,7 @@ class TabsSection extends React.Component {
   render() {
     return (
       <>
-        <h3 style={{textAlign : 'center'}} className="h4 text-primary font-weight-bold mb-4">Features</h3>
+        <h2 style={{textAlign : 'center'}} className="display-3">Features</h2>
         <Row className="justify-content-center">
           <Col lg='6'>
             <img style={{width : '100%', height : '387px', borderRadius : '5px'}} alt="Analytics" src={require('../../assets/img/productImages/analytics.jpg')} />

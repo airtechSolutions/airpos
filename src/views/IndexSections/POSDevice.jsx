@@ -20,17 +20,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {Button} from 'reactstrap';
 // nodejs library that concatenates classes
-import classnames from "classnames";
+// import classnames from "classnames";
 
 // reactstrap components
 import {
-  Card,
-  CardBody,
-  NavItem,
-  NavLink,
-  Nav,
-  TabContent,
-  TabPane,
+  // Card,
+  // CardBody,
+  // NavItem,
+  // NavLink,
+  // Nav,
+  // TabContent,
+  // TabPane,
   Row,
   Col
 } from "reactstrap";
@@ -49,7 +49,7 @@ class POSDevice extends React.Component {
   render() {
     return (
       <>
-        <h3 style={{textAlign : 'center'}} className="h4 text-primary font-weight-bold mb-4">Get Started</h3>
+        <h2 style={{textAlign : 'center'}} className="display-3">Get Started</h2>
         <Row className="justify-content-center">
           <Col lg='8'>
             <img style={{width : '100%', height : 'auto', borderRadius : '5px'}} alt="Analytics" src={require('../../assets/img/productImages/airposDevice.png')} />

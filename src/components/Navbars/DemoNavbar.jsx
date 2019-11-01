@@ -236,20 +236,20 @@ class DemoNavbar extends React.Component {
                   </NavItem>
                   <NavItem className="d-none d-lg-block ml-lg-4">
                     <Link to='/login-page'>
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      target="_blank"
-                    >
+                      <Button
+                        className="btn-neutral btn-icon"
+                        color="default"
+                        target="_blank"
+                      >
 
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-sign-in" aria-hidden="true"></i>
-                      </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Subscribe
-                      </span>
-                    </Button>
-                      </Link>
+                        <span className="btn-inner--icon">
+                          <i className="fa fa-sign-in" aria-hidden="true"></i>
+                        </span>
+                        <span className="nav-link-inner--text ml-1">
+                          Subscribe
+                        </span>
+                      </Button>
+                    </Link>
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>

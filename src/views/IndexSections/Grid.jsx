@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import './Grid.css';
 import TimelineRoundedIcon from '@material-ui/icons/TimelineRounded';
 import ReceiptRoundedIcon from '@material-ui/icons/ReceiptRounded';
 import FastfoodRoundedIcon from '@material-ui/icons/FastfoodRounded';
 import RestaurantRoundedIcon from '@material-ui/icons/RestaurantRounded';
 import StorefrontRoundedIcon from '@material-ui/icons/StorefrontRounded';
-import TableChartRoundedIcon from '@material-ui/icons/TableChartRounded';
+// import TableChartRoundedIcon from '@material-ui/icons/TableChartRounded';
 import ListAltRoundedIcon from '@material-ui/icons/ListAltRounded';
 
 const styles = {
@@ -18,7 +18,8 @@ const styles = {
 const Grid = (props) => {
   return (
     <>
-      <h3 style={{textAlign : 'center', marginTop : '20px'}} className="h4 text-primary font-weight-bold mb-4">POS Deliverables</h3>
+      {/* <h2 style={{textAlign : 'center', marginTop : '20px'}} className="display-3">Features</h2> */}
+      <h2 style={{textAlign : 'center', marginTop : '20px'}} className="display-3">POS Deliverables</h2>
       <Row style={{marginTop : '20px', marginRight : '-10px'}}>
           <Col style={{textAlign : 'center', display : 'block'}} className='gridCardHover gridCard' lg="4" sm="12" md='12' xs="12">
             <TimelineRoundedIcon style={styles.largeIcon} />
