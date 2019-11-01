@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/argon-design-system-react.git"
   },
+  "engines" : {
+    "npm" : "6.9.0",
+    "node" : "10.16.3"
+  },
   "keywords": [
     "react",
     "reactjs",
