@@ -24,7 +24,7 @@ import React from "react";
 import {
   Button,
   Card,
-  CardHeader,
+  // CardHeader,
   CardBody,
   FormGroup,
   Form,
@@ -118,6 +118,7 @@ class Login extends React.Component {
       this.setState({fnameerror, lnameerror, companyerror, emailerror, passworderror, cityerror});
       return false;
     }
+    alert("Our Operator Will Contact You Soon")
     return true;
   }
 
@@ -164,7 +165,8 @@ class Login extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
-                    <CardHeader className="bg-white pb-5">
+                    <h2 style={{textAlign : 'center', marginTop : '10px'}} className='display-3'>Sign Up</h2>
+                    {/* <CardHeader className="bg-white pb-5">
                       <div className="text-muted text-center mb-3">
                         <small>Sign in with</small>
                       </div>
@@ -198,11 +200,11 @@ class Login extends React.Component {
                           <span className="btn-inner--text">Google</span>
                         </Button>
                       </div>
-                    </CardHeader>
-                    <CardBody className="px-lg-5 py-lg-5">
-                      <div className="text-center text-muted mb-4">
+                    </CardHeader> */}
+                    <CardBody style={{marginTop : '-30px', paddingTop : '-5px'}} className="px-lg-5 py-lg-5">
+                      {/* <div className="text-center text-muted mb-4">
                         <small>Or sign in with credentials</small>
-                      </div>
+                      </div> */}
                       <Form role="form">
                         <FormGroup className="mb-3">
                           <InputGroup className="input-group-alternative">

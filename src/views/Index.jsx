@@ -54,21 +54,21 @@ import About from "./IndexSections/About.jsx";
 
 class Index extends React.Component {
   state = {
-    id : [],
-    employee_name : [],
+    // id : [],
+    // employee_name : [],
   }
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
-  componentWillMount(){
-    fetch('http://dummy.restapiexample.com/api/v1/employees').then(res => res.json())
-    .then(data =>this.setState({
-      id : data,
-      employee_name : data,
-    }))
-  }
+  // componentWillMount(){
+  //   fetch('http://dummy.restapiexample.com/api/v1/employees').then(res => res.json())
+  //   .then(data =>this.setState({
+  //     id : data,
+  //     employee_name : data,
+  //   }))
+  // }
   render() {
     return (
       <>
