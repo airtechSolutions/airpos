@@ -25,7 +25,7 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <section style={{padding: 0}} className="section section-lg section-nucleo-icons pb-250">
+        <section style={{marginBottom : '-85px'}} className="section section-lg section-nucleo-icons pb-250">
           <Container>
             <Row className="justify-content-center">
               <Col className="text-center" lg="8">
@@ -48,7 +48,7 @@ class About extends React.Component {
                         <i style={{color : 'white'}} className="fa fa-sign-in" aria-hidden="true"></i>
                         </span>
                         <span style={{color : 'white'}} className="nav-link-inner--text ml-1">
-                        Subscribe
+                        Get Started
                         </span>
                     </Button>
                 </Link>

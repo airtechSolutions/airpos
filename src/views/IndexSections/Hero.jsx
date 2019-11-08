@@ -51,7 +51,9 @@ class Hero extends React.Component {
                       style={{ width: "200px" }}
                     />
                     <p className="lead text-white">
-                      A beautiful Design Point Of Sale(POS) for Resturants. Very Efficient and user friendly
+                      A Professional Design Point Of Sale(POS) for Resturants. Very Efficient And User Friendly.
+                      AIRPOS Made Your Resturant Business Management Easy. You Can Manage Your Sales, Inventory,
+                      Employee, Customers On Your Finger Tip. It's Easy Than Before.
                     </p>
                     {/* <div className="btn-wrapper mt-5">
                       <Button

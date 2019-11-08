@@ -88,7 +88,14 @@ class Index extends React.Component {
               <Menus />
           </section> */}
           {/* <Navbars /> */}
-          <section className="section section-components" style={{backgroundColor : '#EDEDF0', marginTop : '-80px'}}>
+              <section className="section section-components" style={{backgroundColor : '#EDEDF0'}}>
+                <div style={{backgroundColor : '#EDEDF0'}}>
+                  <Container>
+                    <Grid />
+                  </Container>
+                </div>
+              </section>
+          <section className="section section-components" style={{backgroundColor : '#fff', marginTop : '-60px'}}>
             <Container>
               {/* <Table empdata={this.state.id} /> */}
               <Tabs />
@@ -107,17 +114,10 @@ class Index extends React.Component {
               {/* <TooltipPopover /> */}
             </Container>
           </section>
-          <section className="section section-components">
+          <section style={{backgroundColor : '#EDEDF0'}} className="section section-components">
             <Container>
               <POSDevice />
             </Container>
-          </section>
-          <section className="section section-components" style={{backgroundColor : '#EDEDF0'}}>
-            <div style={{backgroundColor : '#EDEDF0'}}>
-              <Container>
-                <Grid />
-              </Container>
-            </div>
           </section>
           <section className="section section-components">
             <div>

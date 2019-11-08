@@ -68,7 +68,7 @@ class POSDevice extends React.Component {
                     <i style={{color : 'white'}} className="fa fa-sign-in" aria-hidden="true"></i>
                     </span>
                     <span style={{color : 'white'}} className="nav-link-inner--text ml-1">
-                    Subscribe
+                    Get Started
                     </span>
                 </Button>
             </Link>

@@ -32,7 +32,7 @@ const Packages = (props) => {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
+                    <Col className="offset-lg-2" lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
@@ -43,19 +43,23 @@ const Packages = (props) => {
                             <br/>14 Days Free Trial
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                            Get Started For Free. Start Using AIRPOS For Free For 14 Days.
+                            All The Features Will Be Enabled. Feel Freely To Use. Manage Your 
+                            Resturant Business. It's Sales, Employee, Inventory, Report, Order
+                            And Much More Features Available For Free.
                           </p>
                           <div>
                             <Badge color="success" pill className="mr-1">
-                              business
+                              Sales
                             </Badge>
                             <Badge color="success" pill className="mr-1">
-                              vision
+                              Analytics
                             </Badge>
                             <Badge color="success" pill className="mr-1">
-                              success
+                              Reports
+                            </Badge>
+                            <Badge color="success" pill className="mr-1">
+                              Inventory
                             </Badge>
                           </div>
                           <Link to='/login-page'>
@@ -65,13 +69,13 @@ const Packages = (props) => {
                                 // href="#pablo"
                                 onClick={e => e.preventDefault()}
                             >
-                                Subscribe
+                                Get Started
                             </Button>
                           </Link>
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="4">
+                    {/* <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
@@ -109,7 +113,7 @@ const Packages = (props) => {
                           </Link>
                         </CardBody>
                       </Card>
-                    </Col>
+                    </Col> */}
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
@@ -121,19 +125,23 @@ const Packages = (props) => {
                             <br/> $20 Per Month
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                            After Completing Your Trial Period, Get Registered For Premium
+                            Membership. You Will Get Much More Services Like Data Backup, 
+                            Cloud Server Support, 24/7 Customer Support. You Can Have Your 
+                            Custom Features Which Will Be Integrate In Your Software.
                           </p>
                           <div>
                             <Badge color="default" pill className="mr-1">
-                              marketing
+                              Support
                             </Badge>
                             <Badge color="default" pill className="mr-1">
-                              product
+                              Cloud
                             </Badge>
                             <Badge color="default" pill className="mr-1">
-                              launch
+                              24/7 Service
+                            </Badge>
+                            <Badge color="default" pill className="mr-1">
+                              And Much More...
                             </Badge>
                           </div>
                           <Link to='/login-page'>
@@ -143,7 +151,7 @@ const Packages = (props) => {
                                 // href="#pablo"
                                 onClick={e => e.preventDefault()}
                             >
-                                Subscribe
+                                Get Started
                             </Button>
                           </Link>
                         </CardBody>

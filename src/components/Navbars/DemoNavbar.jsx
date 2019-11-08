@@ -246,7 +246,7 @@ class DemoNavbar extends React.Component {
                           <i className="fa fa-sign-in" aria-hidden="true"></i>
                         </span>
                         <span className="nav-link-inner--text ml-1">
-                          Subscribe
+                          Get Started
                         </span>
                       </Button>
                     </Link>
