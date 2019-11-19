@@ -193,7 +193,11 @@ class Login extends React.Component {
       })
       .catch(err => {
         console.log(err);
-        
+        this.setState({
+          modalHeading : 'Something Went Wrong',
+          modalDescription : 'Error Arised',
+          modalIsOpen : !this.state.modalIsOpen
+        })
       })
     }    
   }
