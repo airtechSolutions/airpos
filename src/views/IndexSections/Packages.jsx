@@ -13,9 +13,10 @@ import {
     // InputGroup,
     Container,
     Row,
-    Col
-  } from "reactstrap";import './Grid.css';
-  import AttachMoneyRoundedIcon from '@material-ui/icons/AttachMoneyRounded';
+    Col,
+  } from "reactstrap";
+  import './Grid.css';
+  // import AttachMoneyRoundedIcon from '@material-ui/icons/AttachMoneyRounded';
 
 // const styles = {
 //   largeIcon : {

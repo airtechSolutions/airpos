@@ -16,6 +16,7 @@
 
 */
 import React from "react";
+import CardsFooter from "components/Footers/CardsFooter.jsx";
 // import firebaseFile
 // import fire from '../../config/Firebase'
 // post method
@@ -34,38 +35,50 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
+  Label,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+
 } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.jsx";
-import SimpleFooter from "components/Footers/SimpleFooter.jsx";
+// import SimpleFooter from "components/Footers/SimpleFooter.jsx";
+import Axios from "axios";
+// import { strict } from "assert";
 
 const initialState = {
-  id : [],
-  employee_name : [],
-  fname : '',
-  lname : '',
-  company : '',
-  email : '',
-  password : '',
-  city : '',
-  fnameerror : '',
-  lnameerror : '',
-  companyerror : '',
-  emailerror : '',
-  passworderror : '',
-  cityerror : '',
+  FirstName : '',
+  LastName : '',
+  // company : '',
+  Email : '',
+  Password : '',
+  // city : '',
+  UserName : '',
+  UserType : '',
+  PlanType : '',
+  modalIsOpen : false,
+  modalVisible : true,
+  modalHeading : '',
+  modalDescription : '',
+  // fnameerror : '',
+  // lnameerror : '',
+  // // companyerror : '',
+  // emailerror : '',
+  // passworderror : '',
+  // // cityerror : '',
 
 }
+var lnameerror,fnameerror, emailerror,passworderror, plantypeerror;
 
 class Login extends React.Component {
 
 
 
-  state = initialState;
-
-  
+  state = initialState;  
 
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -80,46 +93,74 @@ class Login extends React.Component {
   //     [name] : value
   //   })
   // }
+  handleRadio = (e) => {
+    this.setState({
+      PlanType : e.target.value
+    })
+  }
 
   validate = () => {
     
-    let fnameerror = '';
-    let lnameerror = '';
-    let companyerror = ''
-    let emailerror = '';
-    let passworderror = ''
-    let cityerror = ''
-    if(!this.state.fname) {
+    // let fnameerror = '';
+    // let lnameerror = '';
+    // // let companyerror = ''
+    // let emailerror = '';
+    // let passworderror = ''
+    // // let cityerror = ''
+    if(!this.state.FirstName) {
       fnameerror = 'Please Insert First Name'
     }
     else {
       fnameerror = ''
     }
-    if(!this.state.lname) {
+    if(!this.state.LastName) {
       lnameerror = 'Please Insert Last Name'
     }
-    if(!this.state.company) {
-      companyerror = 'Please Insert Company Name'
+    else {
+      lnameerror = ''
     }
-    if(!this.state.email) {
+    // if(!this.state.company) {
+    //   companyerror = 'Please Insert Company Name'
+    // }
+    if(!this.state.Email) {
       emailerror = 'Please Insert Email Address'
       // this.setState({emailerror : emailerror})
     }
-    else if(!this.state.email.includes('@')) {
+    else if(!this.state.Email.includes('@')) {
       emailerror = 'Invalid Email'
     }
-    if(!this.state.password) {
+    else {
+      emailerror = ''
+    }
+    if(!this.state.Password) {
       passworderror = 'Please Insert Password'
     }
-    if(!this.state.city) {
-      cityerror = 'Please Insert City Name'
+    else {
+      passworderror = ''
     }
-    if(fnameerror || lnameerror || companyerror ||emailerror || passworderror || cityerror) {
-      this.setState({fnameerror, lnameerror, companyerror, emailerror, passworderror, cityerror});
+    if(!this.state.PlanType){
+      plantypeerror = 'Please Select Youn Plan'
+    }
+    else {
+      plantypeerror = ''
+    }
+    // if(!this.state.city) {
+    //   cityerror = 'Please Insert City Name'
+    // }
+    if(fnameerror || lnameerror ||emailerror || passworderror || plantypeerror) {
+      this.setState({fnameerror, lnameerror, emailerror, passworderror, plantypeerror});
+      // console.log(this.state);
+      
       return false;
     }
-    alert("Our Operator Will Contact You Soon")
+    // alert("Our Operator Will Contact You Soon")
     return true;
+  }
+
+  toggleModal = () => {
+    this.setState({
+      modalIsOpen : ! this.state.modalIsOpen
+    })
   }
 
   handleSubmit = event => {
@@ -127,28 +168,58 @@ class Login extends React.Component {
     event.preventDefault();
     const isValid = this.validate();
     if(isValid){
-      console.log(this.state);
+      // console.log(this.state);
 
       // clear form
       this.setState(initialState)
-
-      // post method        
-    }
-    // fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) =>{
-    // }).then((u) => {console.log(u);
-    // }).catch((error) =>{
-    //   console.log(error);
-      
-    // })
-    // console.log(this.state);
-    
-
-    
+      Axios.post('http://airpos.posit-now.com/api/signup/add',this.state)
+      .then(res => {
+        // debugger
+        console.log(res.data);
+        if(res.data.statusid ===1){
+          this.setState({
+            modalHeading : 'Resigtered Successfully',
+            modalDescription : 'Kindly Check You Email',
+            modalIsOpen : !this.state.modalIsOpen
+          })
+        }
+        else {
+          this.setState({
+            modalHeading : 'User Already Registered',
+            modalDescription : 'Kindly Use Different Email Account',
+            modalIsOpen : !this.state.modalIsOpen
+          })          
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        
+      })
+    }    
   }
   render() {
     return (
       <>
         <DemoNavbar />
+        <Modal isOpen ={this.state.modalIsOpen}>
+          <ModalHeader toggle={this.toggleModal}>{this.state.modalHeading}</ModalHeader>
+          <ModalBody>{this.state.modalDescription}</ModalBody>
+          <ModalFooter>
+            <Button onClick={this.toggleModal} color='danger'>
+              Close
+            </Button>
+          </ModalFooter>
+        </Modal>
+        {/* <div style={{position: 'absolute', right :'10%',zIndex:'1', top : '700px', width:'80%'}} className="p-3 bg-success my-2 rounded">
+        <Toast>
+          <ToastHeader>
+            Reactstrap
+          </ToastHeader>
+          <ToastBody>
+            This is a toast on a success background — check it out!
+          </ToastBody>
+        </Toast>
+      </div> */}
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
@@ -216,12 +287,12 @@ class Login extends React.Component {
                             <Input
                              placeholder="First Name" 
                              type="text"
-                             value = {this.state.fname}
-                             onChange = {e => this.setState({fname : e.target.value})}
+                             value = {this.state.FirstName}
+                             onChange = {e => this.setState({FirstName : e.target.value})}
                              />
                           </InputGroup>
-                          {this.state.fnameerror 
-                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{this.state.fnameerror}</div>
+                          {fnameerror 
+                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{fnameerror}</div>
                            : null
                           }
                         </FormGroup>
@@ -235,16 +306,16 @@ class Login extends React.Component {
                             <Input
                              placeholder="Last Name" 
                              type="text"
-                             value = {this.state.lname}
-                             onChange = {e => this.setState({lname : e.target.value})}
+                             value = {this.state.LastName}
+                             onChange = {e => this.setState({LastName : e.target.value})}
                               />
                           </InputGroup>
-                          {this.state.lnameerror 
-                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{this.state.lnameerror}</div>
+                          {lnameerror 
+                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{lnameerror}</div>
                            : null
                           }
                         </FormGroup>
-                        <FormGroup className="mb-3">
+                        {/* <FormGroup className="mb-3">
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -262,7 +333,7 @@ class Login extends React.Component {
                            ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{this.state.companyerror}</div>
                            : null
                           }
-                        </FormGroup>
+                        </FormGroup> */}
                         <FormGroup className="mb-3">
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
@@ -273,12 +344,12 @@ class Login extends React.Component {
                             <Input
                              placeholder="Email" 
                              type="email"
-                             value = {this.state.email}
-                             onChange = {e => this.setState({email : e.target.value})}
+                             value = {this.state.Email}
+                             onChange = {e => this.setState({Email : e.target.value})}
                              />
                           </InputGroup>
-                          {this.state.emailerror 
-                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{this.state.emailerror}</div>
+                          {emailerror 
+                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{emailerror}</div>
                            : null
                           }
                         </FormGroup>
@@ -293,16 +364,51 @@ class Login extends React.Component {
                               placeholder="Password"
                               type="password"
                               autoComplete="off"
-                              value = {this.state.password}
-                              onChange = {e => this.setState({password : e.target.value})}
+                              value = {this.state.Password}
+                              onChange = {e => this.setState({Password : e.target.value})}
                               />
                           </InputGroup>
-                          {this.state.passworderror
-                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{this.state.passworderror}</div>
+                          {passworderror
+                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{passworderror}</div>
                            : null
                           }
                         </FormGroup>
-                        <FormGroup>
+                        <h4>Select Plan</h4>
+                        <FormGroup check>
+                          <Label check>
+                            <Input
+                             type="radio" 
+                             value='Free' 
+                             checked={this.state.PlanType==='Free'} 
+                             onChange={this.handleRadio} 
+                            //  name="radio1" 
+                            />{' '}
+                            <strong>Free</strong>
+                          </Label>
+                          <Label style={{marginLeft : '40px'}} check>
+                            <Input
+                             type="radio" 
+                             value='Paid' 
+                             checked={this.state.PlanType === 'Paid'} 
+                             onChange={this.handleRadio} 
+                            //  name="radio1" 
+                            />{' '}
+                            <strong>Paid</strong>
+                          </Label>
+                          {plantypeerror 
+                           ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{plantypeerror}</div>
+                           : null
+                          }
+                        </FormGroup>
+                        <br/>
+                        {/* <FormGroup>
+                          <Label for="exampleSelectMulti"><strong>Select Plan</strong></Label>
+                          <Input style={{height : '60px', overflowY : 'hidden'}} type="select" name="selectMulti" id="exampleSelectMulti" multiple>
+                            <option>Free</option>
+                            <option style={{marginTop : '10px'}}>Paid</option>
+                          </Input>
+                        </FormGroup> */}
+                        {/* <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -321,7 +427,7 @@ class Login extends React.Component {
                            ?<div style={{textAlign : "center", fontSize : 15, color : "#800"}}>{this.state.cityerror}</div>
                            : null
                           }
-                        </FormGroup>
+                        </FormGroup> */}
                         {/* <div className="custom-control custom-control-alternative custom-checkbox">
                           <input
                             className="custom-control-input"
@@ -373,7 +479,8 @@ class Login extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        {/* <SimpleFooter /> */}
+        <CardsFooter />
       </>
     );
   }

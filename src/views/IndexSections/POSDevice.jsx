@@ -52,7 +52,7 @@ class POSDevice extends React.Component {
         <h2 style={{textAlign : 'center'}} className="display-3">Get Started</h2>
         <Row className="justify-content-center">
           <Col lg='8'>
-            <img style={{width : '100%', height : 'auto', borderRadius : '5px'}} alt="Analytics" src={require('../../assets/img/productImages/airposDevice.png')} />
+            <img style={{width : '70%', height : 'auto', borderRadius : '5px'}} alt="Analytics" src={require('../../assets/img/productImages/Pos-device-1.png')} />
           </Col>
           <Col lg="4">
               <h1>Get Started With AIRPOS Today</h1>
